@@ -582,10 +582,12 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
         var safeAreaTopInset: CGFloat = 20.0
         var safeAreaBottomInset: CGFloat = 0.0
         
-        if #available(iOS 11.0, *)
-        {
+        if #available(iOS 11.0, *) {
             safeAreaTopInset = view.safeAreaInsets.top
             safeAreaBottomInset = view.safeAreaInsets.bottom
+        } else {
+            safeAreaTopInset = topLayoutGuide.length
+            safeAreaBottomInset = bottomLayoutGuide.length
         }
         
         var height = self.view.bounds.height - safeAreaTopInset
