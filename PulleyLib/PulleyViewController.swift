@@ -1213,7 +1213,8 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
                     (drawer.drawerContentViewController as? PulleyDrawerViewControllerDelegate)?.drawerPositionDidChange?(drawer: drawer, bottomSafeArea: self?.pulleySafeAreaInsets.bottom ?? 0.0)
                     (drawer.primaryContentViewController as? PulleyPrimaryContentControllerDelegate)?.drawerPositionDidChange?(drawer: drawer, bottomSafeArea: self?.pulleySafeAreaInsets.bottom ?? 0.0)
                     
-                    drawer.view.layoutIfNeeded()
+//                    drawer.view.layoutIfNeeded()
+                    drawer.view.setNeedsLayout()
                 }
 
                 }, completion: { [weak self] (completed) in
